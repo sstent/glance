@@ -131,6 +131,8 @@ class Store(glance.store.base.Store):
                     return self.wrapped.next()
                 except StopIteration:
                     return ''
+            def read(self, i):
+                return self.another()
 
         return (ResponseIndexable(iterator, content_length), content_length)
 
